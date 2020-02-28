@@ -5,7 +5,7 @@ namespace Bakery
 {
   public class Program
   {
-    // public int BreadTotalPrice;
+    static string order;
 
     public static void Main()
     {
@@ -15,7 +15,12 @@ namespace Bakery
       Console.WriteLine("Start your order: (Press 'Enter')");
       Console.ReadLine();
       Console.WriteLine("Would you like to order Bread or Pastry? (to order bread, type:  'bread'-- to order pastry, type: 'pastry') ");
-      string order = Console.ReadLine().ToLower();
+      order = Console.ReadLine().ToLower();
+      OrderScreen();
+
+    }
+    public static void OrderScreen()
+    {
       if ( order == "bread")
       {
         Console.WriteLine("Enter how many bread you want:");
@@ -31,8 +36,7 @@ namespace Bakery
         int inputtedPastryNum = int.Parse(strPastry);
         TotalOrderPastry(inputtedPastryNum);
         Console.WriteLine(newPastry.PastryUpdate);
-
-      }
+      }        
     }
 
     static Bread newBread = new Bread();
