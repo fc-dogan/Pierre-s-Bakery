@@ -14,13 +14,28 @@ namespace Bakery
       // add Price for both
       Console.WriteLine("Start your order: (Press 'Enter')");
       Console.ReadLine();
-      Console.WriteLine("Would you like to order Bread or Pastry? (to order bread, type:  'bread'-- to order pastry, type: 'pastry') ");
-      order = Console.ReadLine().ToLower();
       OrderScreen();
+      AddScreen();
+    }
 
+    public static void AddScreen()
+    {
+      Console.WriteLine("Would you like to add more to your order? ('yes' or 'no'");
+      string addMore = Console.ReadLine();
+      if(addMore == "yes")
+      {
+      Console.WriteLine("What would you like to add? ('bread' or 'pastry')");
+      OrderScreen();
+      }
+      else
+      {
+        // total and thank you screen
+      }
     }
     public static void OrderScreen()
     {
+      Console.WriteLine("Would you like to order Bread or Pastry? (to order bread, type:  'bread'-- to order pastry, type: 'pastry') ");
+      order = Console.ReadLine().ToLower();
       if ( order == "bread")
       {
         Console.WriteLine("Enter how many bread you want:");
