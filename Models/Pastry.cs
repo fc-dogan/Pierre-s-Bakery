@@ -9,9 +9,8 @@ namespace Models
     
     public Pastry()
     {
-      
       PastryAmount = 0;
-      PastryPrice = 5;
+      PastryPrice = 3;
       PastryTotalPrice = 0;
       PastryUpdate = "";
     }
@@ -21,7 +20,7 @@ namespace Models
         AddPastry(inputtedAmount);
         CalculateTotal();
       }
-      
+
       private void AddPastry(int inputtedAmount)
       {
         PastryAmount += inputtedAmount;

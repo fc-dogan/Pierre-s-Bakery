@@ -15,8 +15,8 @@ namespace Bakery
       Console.WriteLine("Start your order: (Press 'Enter')");
       Console.ReadLine();
       Console.WriteLine("Would you like to order Bread or Pastry? (to order bread, type:  'bread'-- to order pastry, type: 'pastry') ");
-      string breadOrder = Console.ReadLine().ToLower();
-      if ( breadOrder == "bread")
+      string order = Console.ReadLine().ToLower();
+      if ( order == "bread")
       {
         Console.WriteLine("Enter how many bread you want:");
         string stringBread = Console.ReadLine();
@@ -24,14 +24,27 @@ namespace Bakery
         TotalOrderBread(inputtedBreadNum);
         Console.WriteLine(newBread.BreadUpdate);
       }
+      else if (order == "pastry")
+      {
+        Console.WriteLine("Enter how many pastries you want: ");
+        string strPastry = Console.ReadLine();
+        int inputtedPastryNum = int.Parse(strPastry);
+        TotalOrderPastry(inputtedPastryNum);
+        Console.WriteLine(newPastry.PastryUpdate);
+
+      }
     }
 
     static Bread newBread = new Bread();
+    static Pastry newPastry = new Pastry();
     public static void TotalOrderBread(int inputtedBreadNum)
     {
       newBread.BreadOrder(inputtedBreadNum);
     }
-
+    public static void TotalOrderPastry( int inputtedPastryNum)
+    {
+      newPastry.PastryOrder(inputtedPastryNum);
+    }
 
 
 
