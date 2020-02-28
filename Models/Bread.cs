@@ -15,15 +15,15 @@ namespace Models
       BreadUpdate = "";
     }
 
-    public void BreadOrder()
+    public void BreadOrder(int inputtedAmount)
     {
-      AddBread();
+      AddBread(inputtedAmount);
       CalculateTotal();
     }
 
-    private void AddBread()
+    private void AddBread(int inputtedAmount)
     {
-      BreadAmount ++;
+      BreadAmount += inputtedAmount;
     }
 
     private void CalculateTotal()
