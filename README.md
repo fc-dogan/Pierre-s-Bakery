@@ -2,7 +2,7 @@
 
 #### _C# console application for bakery , Feb 28 2020_
 
-#### By _**Fatma Dogan**_
+#### By _**Fatma C. Dogan**_
 
 ## Description
 

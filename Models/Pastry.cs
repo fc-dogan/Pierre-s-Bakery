@@ -1,8 +1,8 @@
 namespace Models
 {
-  public class Bread
+  public class Pastry
   {
-    public Bread()
+    public Pastry()
     {
 
     }
