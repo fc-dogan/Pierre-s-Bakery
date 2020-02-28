@@ -10,7 +10,7 @@ namespace Models
     public Pastry()
     {
       PastryAmount = 0;
-      PastryPrice = 3;
+      PastryPrice = 2;
       PastryTotalPrice = 0;
       PastryUpdate = "";
     }

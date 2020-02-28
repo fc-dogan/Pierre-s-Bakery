@@ -7,33 +7,18 @@ namespace Bakery
   {
     static string order;
     static int totalCost;
-    // static string costScreen = $"Thank you for your order. /n Total price : ${totalCost}";
 
     public static void Main()
     {
       Console.WriteLine("Welcome to Pierre's Bakery");
-      Console.WriteLine("Bread: Pastry: "   );
-      // add Price for both
+      Console.WriteLine("Bread: Buy 2, get 1 free. A single loaf costs $5. \n Pastry: Buy 1 for $2 or 3 for $5. ");
       Console.WriteLine("Start your order: (Press 'Enter')");
       Console.ReadLine();
       Console.WriteLine("Would you like to order Bread or Pastry? (to order bread, type:  'bread'-- to order pastry, type: 'pastry') ");
       OrderScreen();
     }
 
-    public static void AddScreen()
-    {
-      Console.WriteLine("Would you like to add more to your order? ('yes' or 'no'");
-      string addMore = Console.ReadLine();
-      if(addMore == "yes")
-      {
-      Console.WriteLine("What would you like to add? ('bread' or 'pastry')");
-      OrderScreen();
-      }
-      else
-      {
-        Console.WriteLine($"Thank you for your order. \n Total price : ${totalCost}");
-      }
-    }
+    
     public static void OrderScreen()
     {
       order = Console.ReadLine().ToLower();
@@ -55,11 +40,24 @@ namespace Bakery
         TotalOrderPastry(inputtedPastryNum);
         Console.WriteLine(newPastry.PastryUpdate);
         UpdatePastryCost();
-        AddScreen();
-        
+        AddScreen(); 
       }        
     }
-
+    public static void AddScreen()
+    {
+      Console.WriteLine("Would you like to add more to your order? ('yes' or 'no')");
+      string addMore = Console.ReadLine();
+      if(addMore == "yes")
+      {
+      Console.WriteLine("What would you like to add? ('bread' or 'pastry')");
+      OrderScreen();
+      }
+      else
+      {
+        Console.ForegroundColor = ConsoleColor.DarkGreen;
+        Console.WriteLine($"Thank you for your order. \n Total price : ${totalCost}");
+      }
+    }
     static Bread newBread = new Bread();
     static Pastry newPastry = new Pastry();
     public static void TotalOrderBread(int inputtedBreadNum)
@@ -80,8 +78,5 @@ namespace Bakery
       totalCost += newPastry.PastryTotalPrice;
     }
     
-
-
-
   }
 }

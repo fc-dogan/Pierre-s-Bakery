@@ -12,7 +12,7 @@ namespace Models
       BreadAmount = 0;
       BreadPrice = 5;
       BreadTotalPrice = 0;
-      BreadUpdate = "";
+      BreadUpdate = $"{BreadAmount} loaves of Bread = ${BreadTotalPrice}";
     }
 
     public void BreadOrder(int inputtedAmount)
@@ -28,10 +28,19 @@ namespace Models
 
     private void CalculateTotal()
     {
-     BreadTotalPrice = BreadAmount * BreadPrice;
-     BreadUpdate =$"{BreadAmount} loaves of Bread = ${BreadTotalPrice}";
+      BreadTotalPrice = BreadAmount * BreadPrice;
+      if (BreadAmount > 3)
+      {
+        int discount = BreadPrice * (BreadAmount/3);
+        BreadTotalPrice -= discount; 
+        BreadUpdate =$"{BreadAmount} loaves of Bread = ${BreadTotalPrice}";
+      } 
+      else
+      {
+      BreadTotalPrice = BreadAmount * BreadPrice;
+      BreadUpdate =$"{BreadAmount} loaves of Bread = ${BreadTotalPrice}";
+      } 
     }
-
-
+    
   }
 }
