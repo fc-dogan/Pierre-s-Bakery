@@ -6,6 +6,8 @@ namespace Bakery
   public class Program
   {
     static string order;
+    static int totalCost;
+    // static string costScreen = $"Thank you for your order. /n Total price : ${totalCost}";
 
     public static void Main()
     {
@@ -14,8 +16,8 @@ namespace Bakery
       // add Price for both
       Console.WriteLine("Start your order: (Press 'Enter')");
       Console.ReadLine();
+      Console.WriteLine("Would you like to order Bread or Pastry? (to order bread, type:  'bread'-- to order pastry, type: 'pastry') ");
       OrderScreen();
-      AddScreen();
     }
 
     public static void AddScreen()
@@ -29,12 +31,11 @@ namespace Bakery
       }
       else
       {
-        // total and thank you screen
+        Console.WriteLine($"Thank you for your order. \n Total price : ${totalCost}");
       }
     }
     public static void OrderScreen()
     {
-      Console.WriteLine("Would you like to order Bread or Pastry? (to order bread, type:  'bread'-- to order pastry, type: 'pastry') ");
       order = Console.ReadLine().ToLower();
       if ( order == "bread")
       {
@@ -43,6 +44,8 @@ namespace Bakery
         int inputtedBreadNum = int.Parse(stringBread);
         TotalOrderBread(inputtedBreadNum);
         Console.WriteLine(newBread.BreadUpdate);
+        UpdateBreadCost();
+        AddScreen();
       }
       else if (order == "pastry")
       {
@@ -51,6 +54,9 @@ namespace Bakery
         int inputtedPastryNum = int.Parse(strPastry);
         TotalOrderPastry(inputtedPastryNum);
         Console.WriteLine(newPastry.PastryUpdate);
+        UpdatePastryCost();
+        AddScreen();
+        
       }        
     }
 
@@ -64,6 +70,16 @@ namespace Bakery
     {
       newPastry.PastryOrder(inputtedPastryNum);
     }
+
+    public static void UpdateBreadCost()
+    {
+      totalCost += newBread.BreadTotalPrice;
+    }
+    public static void UpdatePastryCost()
+    {
+      totalCost += newPastry.PastryTotalPrice;
+    }
+    
 
 
 
