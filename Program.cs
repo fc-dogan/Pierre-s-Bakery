@@ -11,10 +11,10 @@ namespace Bakery
     public static void Main()
     {
       Console.WriteLine("Welcome to Pierre's Bakery");
-      Console.WriteLine("Bread: Buy 2, get 1 free. A single loaf costs $5. \n Pastry: Buy 1 for $2 or 3 for $5. ");
+      Console.WriteLine(" Bread: Buy 2, get 1 free. A single loaf costs $5. \n Pastry: Buy 1 for $2 or 3 for $5. ");
       Console.WriteLine("Start your order: (Press 'Enter')");
       Console.ReadLine();
-      Console.WriteLine("Would you like to order Bread or Pastry? (to order bread, type:  'bread'-- to order pastry, type: 'pastry') ");
+      Console.WriteLine("Would you like to order Bread or Pastry?\n (to order bread, type:  'bread' \n  to order pastry, type: 'pastry') ");
       OrderScreen();
     }
 

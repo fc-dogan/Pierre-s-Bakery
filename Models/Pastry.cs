@@ -4,6 +4,7 @@ namespace Models
   {
     public int PastryAmount {get; set;}
     public int PastryPrice {get; set;}
+    // public int DiscountedPrice {get; set;}
     public int PastryTotalPrice {get; set;}
     public string PastryUpdate {get; set;}
     
@@ -11,6 +12,7 @@ namespace Models
     {
       PastryAmount = 0;
       PastryPrice = 2;
+      // DiscountedPrice = 5;
       PastryTotalPrice = 0;
       PastryUpdate = "";
     }
@@ -28,8 +30,19 @@ namespace Models
 
       private void CalculateTotal()
       {
-      PastryTotalPrice = PastryAmount * PastryPrice;
-      PastryUpdate =$"{PastryAmount} pastry = ${PastryTotalPrice}";
+        if (PastryAmount % 3 == 0)
+        {
+          // for three pastries:
+          PastryPrice = 5;
+          PastryTotalPrice = (PastryAmount/3) * PastryPrice;
+          PastryUpdate =$"{PastryAmount} pastry = ${PastryTotalPrice}";
+        }
+        else 
+        {
+          PastryPrice = 2;
+          PastryTotalPrice = PastryAmount * PastryPrice;
+          PastryUpdate =$"{PastryAmount} pastry = ${PastryTotalPrice}";
+        }
       }
 
   }

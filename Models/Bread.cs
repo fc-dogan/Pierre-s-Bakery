@@ -12,7 +12,7 @@ namespace Models
       BreadAmount = 0;
       BreadPrice = 5;
       BreadTotalPrice = 0;
-      BreadUpdate = $"{BreadAmount} loaves of Bread = ${BreadTotalPrice}";
+      BreadUpdate = "";
     }
 
     public void BreadOrder(int inputtedAmount)
@@ -41,6 +41,6 @@ namespace Models
       BreadUpdate =$"{BreadAmount} loaves of Bread = ${BreadTotalPrice}";
       } 
     }
-    
+
   }
 }
