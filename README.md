@@ -12,10 +12,16 @@ Console application for a bakery where a user can order a specific amount of loa
 
 | Behavior | Input | Output |
 |---|:---:|:---:|
-|When the user runs the application, they receive a prompt with a welcome message along with the cost for both Bread and Pastry.|  | Welcome to the Pierre's Bakery 
-|The user enters the number of loaves of bread they'd like. The application returns the total cost of order.| 2  | $10 |
-|The user enters the number of pastries they'd like. The application returns the total cost of order. | 3 | $9 |
-|The user can order both bread and pastry |  Bread: 1 / Pastry: 2 | $11 | 
+|When the user runs the application, they receive a prompt with a welcome message along with the cost for both Bread and Pastry.|  | Welcome to the Pierre's Bakery <br>Bread: Buy 2, get 1 free. A single loaf costs $5. <br>Pastry: Buy 1 for $2 or 3 for $5. |
+|The user enters the number of loaves of bread they'd like. The application returns the total cost of order.| 1  | 1 loaves of Bread = $5 |
+|The user enters the number of pastries they'd like. The application returns the total cost of order. | 2 | 2 pastry = $4 |
+|If the user order more than 2 loaves of bread, the application returns discounted price | 3 | 3 loaves of Bread = $10 |
+|If the user order more than 2 pastries, the application returns discounted price | 3 | 3 pastry = $5 |
+|The user receives the following message to add more to the order<br> "Would you like to add more to your order? ('yes' or 'no')" | yes | What would you like to add? ('bread' or 'pastry')|
+|The user can order both bread and pastry |  Bread: 2<br> Pastry: 2 | $14 |
+|If the user doesn't want to add more to the order receives "Total Price" | no | Total Price = $14|
+
+
 
 
 ## Setup/Installation Requirements
