@@ -13,7 +13,7 @@ Console application for a bakery where a user can order a specific amount of loa
 | Behavior | Input | Output |
 |---|:---:|:---:|
 |When the user runs the application, they receive a prompt with a welcome message along with the cost for both Bread and Pastry.|  | Welcome to the Pierre's Bakery <br>Bread: Buy 2, get 1 free. A single loaf costs $5. <br>Pastry: Buy 1 for $2 or 3 for $5. |
-|The user enters the number of loaves of bread they'd like. The application returns the total cost of order.| 1  | 1 loaves of Bread = $5 |
+|The user enters the number of loaves of bread they'd like. The application returns the total cost of order.| 2  | 2 loaves of Bread = $10 |
 |The user enters the number of pastries they'd like. The application returns the total cost of order. | 2 | 2 pastry = $4 |
 |If the user order more than 2 loaves of bread, the application returns discounted price | 3 | 3 loaves of Bread = $10 |
 |If the user order more than 2 pastries, the application returns discounted price | 3 | 3 pastry = $5 |
