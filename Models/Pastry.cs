@@ -30,16 +30,14 @@ namespace Models
 
       private void CalculateTotal()
       {
-        if (PastryAmount % 3 == 0)
+        if (PastryAmount > 2)
         {
-          // for three pastries:
-          PastryPrice = 5;
-          PastryTotalPrice = (PastryAmount/3) * PastryPrice;
+          int beforeDiscountPrice = PastryAmount * PastryPrice;
+          PastryTotalPrice = beforeDiscountPrice - (PastryAmount / 3);
           PastryUpdate =$"{PastryAmount} pastry = ${PastryTotalPrice}";
         }
         else 
         {
-          PastryPrice = 2;
           PastryTotalPrice = PastryAmount * PastryPrice;
           PastryUpdate =$"{PastryAmount} pastry = ${PastryTotalPrice}";
         }
