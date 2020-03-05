@@ -3,20 +3,11 @@ namespace Models
   public class Pastry
   {
     public int PastryAmount {get; set;}
-    public int PastryPrice {get; set;}
-    // public int DiscountedPrice {get; set;}
+    public int PastryPrice {get; set;} = 2;
+    
     public int PastryTotalPrice {get; set;}
     public string PastryUpdate {get; set;}
     
-    public Pastry()
-    {
-      PastryAmount = 0;
-      PastryPrice = 2;
-      // DiscountedPrice = 5;
-      PastryTotalPrice = 0;
-      PastryUpdate = "";
-    }
-
       public void PastryOrder(int inputtedAmount)
       {
         AddPastry(inputtedAmount);

@@ -9,10 +9,7 @@ namespace Models
     
     public Bread()
     {
-      BreadAmount = 0;
-      BreadPrice = 5;
-      BreadTotalPrice = 0;
-      BreadUpdate = "";
+      BreadPrice = 5;  
     }
 
     public void BreadOrder(int inputtedAmount)

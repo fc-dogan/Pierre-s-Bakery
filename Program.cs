@@ -5,46 +5,49 @@ namespace Bakery
 {
   public class Program
   {
-    static string order;
-    static int totalCost;
-    static Bread newBread = new Bread();
-    static Pastry newPastry = new Pastry();
+    public static string Order {get; set;}
+    public static int TotalCost {get; set;}
+    private static Bread _newBread = new Bread();
+    private static Pastry _newPastry = new Pastry();
     public static void Main()
+    {
+      Welcome();
+      OrderScreen();
+    }
+
+    public static void Welcome()
     {
       Console.WriteLine("Welcome to Pierre's Bakery");
       Console.WriteLine(" Bread: Buy 2, get 1 free. A single loaf costs $5. \n Pastry: Buy 1 for $2 or 3 for $5. ");
       Console.WriteLine("Start your order: (Press 'Enter')");
       Console.ReadLine();
       Console.WriteLine("Would you like to order Bread or Pastry?\n (to order bread, type:  'bread' \n to order pastry, type: 'pastry') ");
-      OrderScreen();
     }
-
-    
     public static void OrderScreen()
     {
-      order = Console.ReadLine().ToLower();
-      if ( order == "bread")
+      Order = Console.ReadLine().ToLower();
+      if ( Order == "bread")
       {
         Console.WriteLine("Enter how many bread you want:");
         string stringBread = Console.ReadLine();
         int inputtedBreadNum = int.Parse(stringBread);
-        newBread.BreadOrder(inputtedBreadNum);
-        Console.WriteLine(newBread.BreadUpdate);
+        _newBread.BreadOrder(inputtedBreadNum);
+        Console.WriteLine(_newBread.BreadUpdate);
         AddScreen();
       }
-      else if (order == "pastry")
+      else if (Order == "pastry")
       {
         Console.WriteLine("Enter how many pastries you want: ");
         string strPastry = Console.ReadLine();
         int inputtedPastryNum = int.Parse(strPastry);
-        newPastry.PastryOrder(inputtedPastryNum);
-        Console.WriteLine(newPastry.PastryUpdate);
+        _newPastry.PastryOrder(inputtedPastryNum);
+        Console.WriteLine(_newPastry.PastryUpdate);
         AddScreen(); 
       }        
     }
     public static void AddScreen()
     {
-      totalCost =  newBread.BreadTotalPrice + newPastry.PastryTotalPrice;
+      TotalCost =  _newBread.BreadTotalPrice + _newPastry.PastryTotalPrice;
       Console.WriteLine("Would you like to add more to your order? ('yes' or 'no')");
       string addMore = Console.ReadLine();
       if(addMore == "yes")
@@ -55,7 +58,7 @@ namespace Bakery
       else
       {
         Console.ForegroundColor = ConsoleColor.DarkGreen;
-        Console.WriteLine($"Thank you for your order. \n Total price : ${totalCost}");
+        Console.WriteLine($"Thank you for your order. \n Total price : ${TotalCost}");
       }
     }
 

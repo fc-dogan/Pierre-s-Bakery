@@ -60,4 +60,10 @@ _No known bugs at this time._
 ## Technologies Used
 
 * C#
-* .Net Core
+* .Net Core 2.2
+
+### License
+
+[MIT](https://choosealicense.com/licenses/mit/)
+
+Copyright (c) 2020 **_Fatma Dogan_**
